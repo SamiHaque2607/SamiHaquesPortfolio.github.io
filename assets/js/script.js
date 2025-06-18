@@ -99,17 +99,25 @@ formInputs.forEach(input => {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-navigationLinks.forEach((link, index) => {
+navigationLinks.forEach(link => {
   link.addEventListener("click", () => {
+    const selectedPage = link.innerText.toLowerCase().trim();
+
+    // Remove 'active' from all pages and nav links
+    pages.forEach(page => page.classList.remove("active"));
+    navigationLinks.forEach(nav => nav.classList.remove("active"));
+
+    // Activate the selected page
     pages.forEach(page => {
-      if (link.innerText.toLowerCase().trim() === page.dataset.page) {
+      if (page.dataset.page === selectedPage) {
         page.classList.add("active");
-        navigationLinks[index].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        page.classList.remove("active");
-        navigationLinks[index].classList.remove("active");
       }
     });
+
+    // Activate the clicked nav link
+    link.classList.add("active");
+
+    // Scroll to top of the page
+    window.scrollTo(0, 0);
   });
 });
