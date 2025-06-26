@@ -2,15 +2,6 @@
   #style.css
 \*-----------------------------------*/
 
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-
-
-
-
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
@@ -886,7 +877,6 @@ main {
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
-
 .filter-list {
   display: none;
 }
@@ -960,10 +950,8 @@ main {
 .project-item {
   display: none;
   width: 100%;
-  min-height: 280px; /* Ensures consistent item height */
+  min-height: 280px;
 }
-
-
 
 .project-item.active {
   display: block;
@@ -982,15 +970,13 @@ main {
 .project-item > a {
   width: 100%;
   display: block;
-  text-decoration: none; /* Remove underlines */
+  text-decoration: none;
 }
 
 .project-img {
   position: relative;
   width: 100%;
-  height: 200px; /* Fixed height - this is the key */
-  max-height: 200px; /* Prevents any expansion */
-  min-height: 200px; /* Prevents any shrinking */
+  height: 200px;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
@@ -1009,7 +995,7 @@ main {
   width: 100%;
   height: 100%;
   background: transparent;
-  z-index: 2; /* Changed from 1 to 2 to be above image */
+  z-index: 2;
   transition: var(--transition-1);
 }
 
@@ -1029,7 +1015,7 @@ main {
   padding: 18px;
   border-radius: 12px;
   opacity: 0;
-  z-index: 3; /* Highest z-index to be above overlay */
+  z-index: 3;
   transition: var(--transition-1);
 }
 
@@ -1043,20 +1029,18 @@ main {
 }
 
 .project-img img {
-  max-width: calc(100% - 20px); /* Leaves 10px gap on each side */
-  max-height: calc(100% - 20px); /* Leaves 10px gap on top and bottom */
-  width: auto;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   object-position: center;
   display: block;
+  border-radius: 8px;
   transition: var(--transition-1);
   z-index: 1;
-  border-radius: 8px;
 }
 
 .project-item > a:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .project-title,
@@ -1077,6 +1061,7 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
+
 
 
 
